@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Um mimo pra você ♡</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela 1: Gatinho e Início -->
+  <section class="screen active" id="screen-1">
+    <p class="script-text">oiee... tenho algo pra você ♡</p>
+    
+    <div class="cat-wrapper">
+      <!-- Substitua 'gatinho.png' pelo caminho do seu arquivo -->
+      <img src="catioro.png" alt="Gatinho fofo" class="cat-img">
+    </div>
+
+    <button class="btn-primary" onclick="goToScreen(2)">aperte aqui</button>
+    <p class="sub-hint">↑ vai lá, não tenha medo</p>
+  </section>
+
+  <!-- Tela 2: Envelope -->
+  <section class="screen" id="screen-2">
+    <p class="script-text">clique aqui!! ✉</p>
+
+    <div class="envelope-box" onclick="goToScreen(3)">
+      <div class="envelope-flap"></div>
+      <div class="envelope-heart">♥</div>
+    </div>
+
+    <button class="btn-secondary" onclick="goToScreen(1)">← voltar</button>
+  </section>
+
+  <!-- Tela 3: Carta Aberta -->
+  <section class="screen" id="screen-3">
+    <div class="letter-sheet">
+      <div class="letter-inner">
+        <img id="letter-image" src="" alt="Ilustração da carta" class="letter-illustration">
+        <div class="letter-body" id="letter-content"></div>
+      </div>
+      
+      <p class="letter-signature" id="letter-signature">— Feliz nosso dia 26, Nessa. 🌸</p>
+
+      <div class="page-nav">
+        <button class="nav-btn" id="prev-btn" onclick="prevPage()">← anterior</button>
+        <span class="page-indicator" id="page-counter">1 de 4</span>
+        <button class="nav-btn" id="next-btn" onclick="nextPage()">próxima →</button>
+      </div>
+    </div>
+
+    <button class="btn-secondary" onclick="goToScreen(2)">← fechar cartinha</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

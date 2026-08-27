@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #fff0f3 0%, #fde2e4 60%, #fad2e1 100%);
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: #8c5364;
+  padding: 20px 0;
+}
+
+/* Telas */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  max-width: 440px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Textos */
+.script-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  color: #b56576;
+  margin-bottom: 12px;
+}
+
+.sub-hint {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: #b56576;
+  margin-top: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* Botões */
+.btn-primary {
+  background: #e56b81;
+  color: #ffffff;
+  border: none;
+  padding: 14px 38px;
+  border-radius: 999px;
+  font-size: 1.25rem;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(229, 107, 129, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(229, 107, 129, 0.45);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #e5989b;
+  color: #b56576;
+  padding: 8px 24px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Imagem da Tela 1 */
+.cat-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.cat-img {
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(229, 107, 129, 0.15));
+}
+
+/* Envelope */
+.envelope-box {
+  width: 260px;
+  height: 180px;
+  background: #f8ad9d;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(181, 101, 118, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.envelope-box:hover {
+  transform: scale(1.03);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 130px solid transparent;
+  border-right: 130px solid transparent;
+  border-top: 95px solid #f4978e;
+  border-radius: 8px;
+}
+
+.envelope-heart {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #b56576;
+  border-radius: 50%;
+  top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* Folha da Carta */
+.letter-sheet {
+  background: #fffdfa;
+  width: 100%;
+  max-width: 400px;
+  min-height: 480px;
+  border-radius: 18px;
+  padding: 24px 20px;
+  box-shadow: 0 14px 30px rgba(181, 101, 118, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #fceade;
+}
+
+.letter-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.letter-illustration {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.letter-body {
+  font-family: 'Caveat', cursive;
+  font-size: 1.55rem;
+  line-height: 1.4;
+  color: #6d4c54;
+  text-align: center;
+}
+
+.letter-signature {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  color: #b56576;
+  margin-top: 8px;
+}
+
+/* Controles de Página */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed #fcd5ce;
+}
+
+.nav-btn {
+  background: #fcd5ce;
+  border: none;
+  color: #6d4c54;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #f8ad9d;
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.page-indicator {
+  font-size: 0.85rem;
+  color: #b56576;
+}
