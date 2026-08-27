@@ -6,14 +6,96 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(circle at center, #fff0f3 0%, #fde2e4 60%, #fad2e1 100%);
   font-family: 'Nunito', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   color: #8c5364;
-  padding: 20px 0;
+  padding: 20px 0; 
+
+background: radial-gradient(circle at center, #fff0f3 0%, #fde2e4 60%, #fad2e1 100%);
+  background-attachment: fixed; /* Opcional: Garante que o fundo não role */
+}
+
+/* Container para as bolinhas flutuantes */
+.floating-balls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Garante que as bolinhas não recebam cliques */
+  z-index: 0; /* Coloca as bolinhas atrás do conteúdo principal */
+  overflow: hidden;
+}
+
+/* Estilo base para cada bolinha */
+.ball {
+  position: absolute;
+  bottom: -50px; /* Começa abaixo da tela */
+  background: rgba(229, 107, 129, 0.1); /* Rosa semi-transparente */
+  border-radius: 80%;
+  animation: floatUp linear infinite; /* Aplica a animação */
+}
+
+/* Definição da animação de flutuação */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1; /* Aparece gradualmente */
+  }
+  100% {
+    transform: translateY(-120vh); /* Sobe além do topo da tela */
+    opacity: 0; /* Desaparece suavemente no topo */
+  }
+}
+
+/* Configuração Individual das Bolinhas */
+
+#ball-1 {
+  width: 25px; height: 25px;
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 1s;
+}
+
+#ball-2 {
+  width: 40px; height: 40px;
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+#ball-3 {
+  width: 15px; height: 15px;
+  left: 40%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+#ball-4 {
+  width: 30px; height: 30px;
+  left: 60%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+#ball-5 {
+  width: 20px; height: 20px;
+  left: 75%;
+  animation-duration: 7s;
+  animation-delay: 5s;
+}
+
+#ball-6 {
+  width: 35px; height: 35px;
+  left: 90%;
+  animation-duration: 9s;
+  animation-delay: 0s; /* Começa imediatamente */
 }
 
 /* Telas */
